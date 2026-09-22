@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WhatsApp 官方网页版指南：提供 WhatsApp Web 在线使用方法、下载安装教程、数据安全隐私设置详解以及常见问题解答。">
+    <meta name="keywords" content="WhatsApp, WhatsApp Web, WhatsApp下载, WhatsApp电脑版, 跨平台通讯">
+    <title>WhatsApp-官方网页版使用指南与下载服务</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-green: #00a884;
+            --primary-green-hover: #008f6f;
+            --bg-color: #efeae2;
+            --surface-color: #ffffff;
+            --text-primary: #111b21;
+            --text-secondary: #667781;
+            --border-color: #e9edef;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--surface-color);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 24px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-green-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #00a884 0%, #008f6f 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 24px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 60px 0;
+            background-color: var(--surface-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .card {
+            background: var(--bg-color);
+            padding: 32px;
+            border-radius: var(--radius);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Guide Section */
+        .guide {
+            padding: 60px 0;
+        }
+
+        .guide-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .step-list {
+            counter-reset: step;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: bold;
+        }
+
+        .step-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .step-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .guide-image {
+            background: url('https://picsum.photos/seed/whatsappweb/600/400') center/cover no-repeat;
+            border-radius: var(--radius);
+            height: 400px;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Security Section */
+        .security {
+            padding: 60px 0;
+            background-color: #d1e7dd;
+        }
+
+        .security-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .security-item h4 {
+            margin: 15px 0 10px;
+            font-size: 1.1rem;
+        }
+
+        .security-item p {
+            color: #0f5132;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 60px 0;
+            background-color: var(--surface-color);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-primary);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-green);
+        }
+
+        .faq-answer {
+            margin-top: 15px;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111b21;
+            color: #8696a0;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #222e35;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .guide-content { grid-template-columns: 1fr; }
+            .nav-wrapper { flex-direction: column; height: auto; padding: 16px 0; gap: 16px; }
+            nav ul { gap: 16px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <a href="#" class="logo">
+            <svg viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.6 0C7.4 0 0 7.4 0 16.6c0 2.9.8 5.7 2.2 8.2L.6 32.5l7.6-2c2.4 1.3 5.1 2 7.8 2 9.2 0 16.6-7.4 16.6-16.6S25.8 0 16.6 0zm0 30.3c-2.4 0-4.8-.6-6.9-1.7l-.5-.3-5.2 1.4 1.4-5.1-.3-.5C3.5 21.4 2.7 19.1 2.7 16.6 2.7 8.6 9.3 2 16.6 2s13.9 6.6 13.9 13.9-6.6 13.9-13.9 13.9z"/>
+            </svg>
+            WhatsApp
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#features">功能特性</a></li>
+                <li><a href="#download">下载安装</a></li>
+                <li><a href="#guide">使用指南</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-primary">下载应用</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>随时随地，免费通讯</h1>
+        <p>WhatsApp 是一款简单、可靠且私密的即时通讯应用。无论您是在手机上还是电脑上，都可以与朋友和家人保持联系。</p>
+        <div class="hero-buttons">
+            <a href="#download" class="btn-primary">获取 WhatsApp</a>
+            <a href="#guide" class="btn-outline">了解 Web 版</a>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="features">
+    <div class="container">
+        <div class="section-header">
+            <h2>为何选择 WhatsApp</h2>
+            <p>简单、可靠且私密的通讯体验</p>
+        </div>
+        <div class="grid-3">
+            <article class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <h3>免费发送消息</h3>
+                <p>通过互联网发送和接收消息、图片、音频和视频，无需支付短信费用。支持一对一聊天和群组聊天。</p>
+            </article>
+            <article class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                </div>
+                <h3>端到端加密</h3>
+                <p>您的个人聊天记录受到端到端加密保护。这意味着只有您和您与之交谈的人可以阅读消息。</p>
+            </article>
+            <article class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                </div>
+                <h3>语音与视频通话</h3>
+                <p>通过互联网进行免费语音和视频通话，支持群组通话，画质清晰，连接稳定。</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="download" class="guide">
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-text">
+                <div class="section-header" style="text-align: left; margin-bottom: 24px;">
+                    <h2>下载并开始使用</h2>
+                    <p>无论您使用的是 Android、iPhone 还是电脑，都可以轻松安装。</p>
+                </div>
+                <div class="step-list">
+                    <div class="step-item">
+                        <h4>1. 下载应用程序</h4>
+                        <p>前往 Google Play Store 或 Apple App Store 搜索 "WhatsApp"，下载并安装最新版本。</p>
+                    </div>
+                    <div class="step-item">
+                        <h4>2. 输入手机号码</h4>
+                        <p>打开应用，输入您的手机号码。WhatsApp 会发送一条包含验证码的短信给您。</p>
+                    </div>
+                    <div class="step-item">
+                        <h4>3. 创建个人资料</h4>
+                        <p>设置您的状态、个人资料图片，并开始与联系人进行通讯。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="guide-image" aria-label="WhatsApp 应用界面示意图"></div>
+        </div>
+    </div>
+</section>
+
+<section class="security">
+    <div class="container">
+        <div class="security-content">
+            <div class="security-item">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                <h4>双重验证</h4>
+                <p>为您的账户添加额外的安全层，防止他人未经授权登录。</p>
+            </div>
+            <div class="security-item">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                <h4>被删除消息</h4>
+                <p>管理员可以设置消息在特定时间后自动删除，保护隐私。</p>
+            </div>
+            <div class="security-item">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                <h4>隐私设置</h4>
+                <p>完全控制谁可以看到您的“最后上线”时间、个人资料照片和状态。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="faq" class="faq">
+    <div class="container">
+        <div class="section-header">
+            <h2>常见问题解答</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item active">
+                <div class="faq-question">WhatsApp 是免费的吗？</div>
+                <div class="faq-answer">是的，WhatsApp 的基本功能完全免费。您只需支付运营商提供的移动数据费用或通过 Wi-Fi 使用。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">我可以同时在手机和电脑上使用 WhatsApp 吗？</div>
+                <div class="faq-answer">可以。WhatsApp Web 和桌面版应用会同步您的手机消息。您可以在电脑上接收和发送消息，而无需打开手机。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何注销 WhatsApp 账户？</div>
+                <div class="faq-answer">您可以通过设置菜单中的“账户”选项选择“删除我的账户”。请注意，此操作是永久性的且无法撤销。</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>关于 WhatsApp</h5>
+                <ul>
+                    <li><a href="#">公司简介</a></li>
+                    <li><a href="#">工作机会</a></li>
+                    <li><a href="#">品牌中心</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>产品功能</h5>
+                <ul>
+                    <li><a href="#">WhatsApp Web</a></li>
+                    <li><a href="#">WhatsApp Business</a></li>
+                    <li><a href="#">下载应用</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>支持</h5>
+                <ul>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">安全信息</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>法律</h5>
+                <ul>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">服务条款</a></li>
+                    <li><a href="#">Cookie 政策</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023-2024 WhatsApp LLC. 本站为第三方使用指南，非官方网站。</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // FAQ Toggle Logic
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', () => {
+            const parent = item.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
+
+    // Smooth Scroll for Navigation
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
