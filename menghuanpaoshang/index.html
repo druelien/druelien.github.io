@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梦幻跑商助手-高效游戏攻略与工具箱</title>
+    <meta name="description" content="梦幻跑商助手提供专业的梦幻西游跑商攻略、跨服交易技巧、任务路线优化及自动化工具推荐，助你轻松赚取大量资金。">
+    <meta name="keywords" content="梦幻跑商助手,梦幻西游跑商,梦幻西游攻略,游戏工具,跨服跑商">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4af37; /* 游戏金 */
+            --primary-dark: #b4931f;
+            --bg-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-download {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-download:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px var(--spacing-unit);
+        }
+
+        /* Section Styles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .tool-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .tool-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .tool-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        /* Guide List */
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+
+        .guide-list article {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .guide-list h3 {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .guide-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .guide-list p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .guide-list a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Sidebar */
+        .sidebar-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            margin-bottom: 24px;
+        }
+
+        .sidebar-card h3 {
+            margin-bottom: 16px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .price-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 0.95rem;
+        }
+
+        .price-list li span:last-child {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>🛡️</span> 梦幻跑商助手
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#tools">工具箱</a>
+                <a href="#guides">跑商攻略</a>
+                <a href="#prices">价格表</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#" class="btn-download">下载客户端</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>轻松跑商，财富自由</h1>
+            <p>专为《梦幻西游》玩家打造的全能跑商助手。提供实时汇率、最优路线规划、自动记账及跨服交易指南，让跑商不再是负担。</p>
+            <a href="#tools" class="btn-download" style="padding: 12px 32px; font-size: 1.1rem;">立即开始使用</a>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <strong>99.9%</strong>
+                    <span>汇率准确率</span>
+                </div>
+                <div class="stat-item">
+                    <strong>50+</strong>
+                    <span>服务器覆盖</span>
+                </div>
+                <div class="stat-item">
+                    <strong>10W+</strong>
+                    <span>玩家信赖</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- 工具箱板块 -->
+        <section id="tools">
+            <div class="section-title">
+                <h2>核心工具箱</h2>
+                <p>一站式解决跑商过程中的所有数据计算与决策难题</p>
+            </div>
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <div class="tool-icon">📈</div>
+                    <h3>实时汇率查询</h3>
+                    <p>自动同步各服务器当前商会、黑市及跨服交易价格，支持按货物类型筛选，助你把握最佳买卖时机。</p>
+                    <div>
+                        <span class="tag">实时更新</span>
+                        <span class="tag">多服务器</span>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <div class="tool-icon">🗺️</div>
+                    <h3>最优路线规划</h3>
+                    <p>根据当前库存和汇率，智能推荐最优的进货与出货路线，减少跑商时间，提升效率。</p>
+                    <div>
+                        <span class="tag">智能算法</span>
+                        <span class="tag">自动导航</span>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <div class="tool-icon">🧮</div>
+                    <h3>利润计算器</h3>
+                    <p>输入买卖价格、手续费和运费，快速计算单次跑商利润。支持批量计算，对比不同方案收益。</p>
+                    <div>
+                        <span class="tag">精准计算</span>
+                        <span class="tag">批量处理</span>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <div class="tool-icon">💰</div>
+                    <h3>资产统计报表</h3>
+                    <p>自动记录你的跑商历史数据，生成周报/月报，可视化展示资金增长趋势和货物偏好。</p>
+                    <div>
+                        <span class="tag">数据可视化</span>
+                        <span class="tag">自动导出</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 攻略与资讯板块 -->
+        <section id="guides" style="margin-top: 60px;">
+            <div class="section-title">
+                <h2>跑商进阶攻略</h2>
+                <p>从入门到精通，掌握跑商的底层逻辑与技巧</p>
+            </div>
+            <div class="guide-layout">
+                <div class="guide-list">
+                    <article>
+                        <div class="guide-meta">新手指南 • 阅读 5.2w</div>
+                        <h3>梦幻西游跑商新手入门：从0到1的财富积累</h3>
+                        <p>跑商是新手最快速积累资金的途径。本文详细介绍了商会系统的开启条件、货物选择原则以及基础的资金计算方法，帮助新手快速上手。</p>
+                        <a href="#">阅读完整攻略 &rarr;</a>
+                    </article>
+                    <article>
+                        <div class="guide-meta">高阶技巧 • 阅读 3.8w</div>
+                        <h3>汇率波动下的套利技巧：如何利用黑市差价</h3>
+                        <p>黑市价格往往滞后于商会，掌握黑市与商会之间的价格差，可以在短时间内通过低买高卖赚取巨额利润。本文将解析常见的服务器套利模式。</p>
+                        <a href="#">阅读完整攻略 &rarr;</a>
+                    </article>
+                    <article>
+                        <div class="guide-meta">跨服交易 • 阅读 2.1w</div>
+                        <h3>跨服跑商全流程解析：从申请到资金划转</h3>
+                        <div class="tag">跨服</div>
+                        <p>跨服跑商收益更高但流程更复杂。本文详细拆解了跨服跑商的申请流程、资金冻结规则以及跨服货物的特殊属性，助你规避风险。</p>
+                        <a href="#">阅读完整攻略 &rarr;</a>
+                    </article>
+                </div>
+
+                <aside>
+                    <div class="sidebar-card">
+                        <h3>当前热门货物</h3>
+                        <ul class="price-list">
+                            <li><span>鹿茸</span><span>¥320</span></li>
+                            <li><span>金创药</span><span>¥145</span></li>
+                            <li><span>符纸</span><span>¥210</span></li>
+                            <li><span>棉花</span><span>¥85</span></li>
+                            <li><span>茶叶</span><span>¥280</span></li>
+                        </ul>
+                        <p style="font-size: 0.85rem; color: #999; margin-top: 15px; text-align: center;">数据仅供参考，以游戏内实际为准</p>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>热门工具下载</h3>
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <a href="#" style="padding: 10px; background: #f9f9f9; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Windows版</span>
+                                <span style="color: var(--primary-color); font-size: 0.8rem;">v2.1</span>
+                            </a>
+                            <a href="#" style="padding: 10px; background: #f9f9f9; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Mac版</span>
+                                <span style="color: var(--primary-color); font-size: 0.8rem;">v2.1</span>
+                            </a>
+                            <a href="#" style="padding: 10px; background: #f9f9f9; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>手机版</span>
+                                <span style="color: var(--primary-color); font-size: 0.8rem;">v1.5</span>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- FAQ板块 -->
+        <section id="faq" style="margin-top: 60px;">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <h4>跑商助手的数据来源是什么？</h4>
+                    <p>我们的数据主要来源于玩家社区的大数据统计以及官方公开信息，通过算法模型进行平滑处理，确保数据尽可能接近游戏内实际行情，但游戏内价格实时变动，请以实际游戏体验为准。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>使用跑商助手会被封号吗？</h4>
+                    <p>跑商助手仅提供数据查询和计算功能，不涉及任何游戏外挂或自动操作脚本，属于辅助工具范畴，正常使用不会导致封号。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>如何开通跨服跑商权限？</h4>
+                    <p>玩家等级达到100级后，可以在长安城（或对应服务器）的商会接引人处申请跨服跑商任务。部分特殊服务器可能需要完成前置剧情。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于梦幻跑商助手</h4>
+                <p style="font-size: 0.9rem; color: #999;">致力于为《梦幻西游》玩家提供最专业、最便捷的跑商辅助服务，打造玩家信赖的攻略社区。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">游戏官网</a></li>
+                    <li><a href="#">官方论坛</a></li>
+                    <li><a href="#">客服中心</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>服务条款</h4>
+                <ul>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">免责声明</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 梦幻跑商助手. 本站为玩家社区，非网易官方站点。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
