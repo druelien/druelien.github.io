@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="专业铝塑板门头设计、制作与安装指南。提供门头设计方案、材质工艺解析、施工流程及常见问题解答，助您打造高端门头形象。">
+    <meta name="keywords" content="铝塑板门头,门头设计,广告门头制作,铝塑板门头安装,店铺门头">
+    <title>铝塑板门头-专业店铺门头设计与制作安装服务</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #d35400;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --spacing-unit: 20px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 20px; }
+        .mb-4 { margin-bottom: 40px; }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .cta-btn:hover {
+            background-color: #a04000;
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.125rem;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #1a252f;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .hero-image {
+            flex: 1;
+            background-color: #ddd;
+            border-radius: var(--border-radius);
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(44, 62, 80, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        /* Process Section */
+        .process {
+            background-color: var(--light-bg);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ddd;
+            z-index: 0;
+            display: none;
+        }
+
+        @media(min-width: 768px) {
+            .process-steps::before { display: block; }
+        }
+
+        .step-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            min-width: 150px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--white);
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .step-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .step-item p {
+            font-size: 0.9rem;
+            color: #666;
+            padding: 0 10px;
+        }
+
+        /* Material Section */
+        .material-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .material-info ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .material-info ul li::before {
+            content: '✔';
+            color: #27ae60;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .material-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .material-image img {
+            width: 100%;
+            display: block;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: #555;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper { flex-direction: column; height: auto; padding: 15px 0; }
+            nav ul { margin: 15px 0; flex-wrap: wrap; justify-content: center; }
+            .hero-content { flex-direction: column-reverse; }
+            .hero-text h1 { font-size: 2rem; }
+            .material-grid { grid-template-columns: 1fr; }
+            .process-steps { flex-direction: column; }
+            .process-steps::before { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">招牌<span>专家</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#design">设计方案</a></li>
+                    <li><a href="#process">施工流程</a></li>
+                    <li><a href="#materials">材质工艺</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn">获取报价</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>打造吸睛品牌形象<br>从优质铝塑板门头开始</h1>
+                    <p>专业铝塑板门头设计与制作，融合时尚外观与耐用材质。无论是连锁店铺、写字楼还是餐饮场所，我们提供一站式门头解决方案。</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">在线咨询设计</a>
+                        <a href="#process" class="btn btn-outline">了解施工流程</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/signboard1/600/400" alt="专业铝塑板门头效果图">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section-padding features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>为什么选择铝塑板门头？</h2>
+                    <p>铝塑板门头因其优异的性能和美观的外观，成为现代商业门头的主流选择。</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon-box">🎨</div>
+                        <h3>色彩丰富，造型多样</h3>
+                        <p>可定制各种颜色和纹理，表面平整光滑，易于加工成各种复杂的造型，完美契合品牌VI设计。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box">🛡️</div>
+                        <h3>耐候性强，抗腐蚀</h3>
+                        <p>具有优异的耐酸碱、耐盐雾性能，不易褪色、起皮，能适应各种恶劣的室外环境。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box">💰</div>
+                        <h3>性价比高，安装便捷</h3>
+                        <p>相比亚克力或不锈钢，铝塑板成本更低，重量轻，安装简单快捷，大大缩短工期。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box">🔧</div>
+                        <h3>维护简单，易于清洁</h3>
+                        <p>表面致密，不易吸附灰尘，用水或中性清洁剂擦拭即可恢复光洁，维护成本极低。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="section-padding process" id="process">
+            <div class="container">
+                <div class="section-title">
+                    <h2>标准化施工流程</h2>
+                    <p>我们拥有成熟的施工团队，确保每一块铝塑板门头都精准安装，稳固耐用。</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h3>现场测量</h3>
+                        <p>专业测量员上门复核尺寸，确认门头结构，规避安装风险。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h3>深化设计</h3>
+                        <p>根据测量数据出CAD图纸，确认结构节点、龙骨布局及收口细节。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h3>下料制作</h3>
+                        <p>工厂精密切割，折弯成型，并预留Logo及灯箱安装位。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h3>现场安装</h3>
+                        <p>安装轻钢龙骨骨架，固定铝塑板，处理接缝与收口。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <h3>验收交付</h3>
+                        <p>全面检查平整度与牢固度，清理现场，交付使用。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Material Section -->
+        <section class="section-padding" id="materials">
+            <div class="container">
+                <div class="material-grid">
+                    <div class="material-image">
+                        <img src="https://picsum.photos/seed/aluplate/600/400" alt="铝塑板材质细节">
+                    </div>
+                    <div class="material-info">
+                        <h2 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 20px;">高品质铝塑板材质解析</h2>
+                        <p style="margin-bottom: 20px; color: #555;">
+                            好的门头离不开好材料。我们选用双层优质铝板芯层，中间采用高密度PE阻燃芯材，厚度符合国家标准。
+                        </p>
+                        <ul>
+                            <li>表面采用氟碳喷涂（PVDF）工艺，保色性极佳，使用10年不褪色。</li>
+                            <li>防火性能达到B1级标准，安全系数高。</li>
+                            <li>抗冲击力强，不易产生永久性划痕。</li>
+                            <li>环保无异味，符合现代绿色建筑标准。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-padding faq" id="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于铝塑板门头的安装与维护，您可能关心的这些问题。</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">铝塑板门头的使用寿命一般是多久？</div>
+                        <div class="faq-answer">
+                            <p>在正常使用和维护条件下，优质氟碳喷涂铝塑板门头的使用寿命通常在10-15年左右。相比亚克力材质，它不易发黄、脆化。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">门头安装需要多长时间？</div>
+                        <div class="faq-answer">
+                            <p>从测量到安装完成，通常需要3-5个工作日。如果涉及大型复杂造型或等待定制Logo灯箱，时间可能会延长。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">冬天安装铝塑板门头会有影响吗？</div>
+                        <div class="faq-answer">
+                            <p>铝塑板具有较好的低温韧性，在零下20度至60度之间均可正常使用。但施工时需注意板材的存放环境，避免受潮。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如果不小心划伤了，可以修复吗？</div>
+                        <div class="faq-answer">
+                            <p>轻微的表面划痕可以通过专业的修复蜡进行抛光处理。如果划痕较深伤及铝层，建议局部更换板材或进行专业喷漆修补。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>招牌专家</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">
+                        专注于商业门头设计与制作，致力于为中小企业提供高性价比的招牌解决方案。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#">店面门头设计</a></li>
+                        <li><a href="#">LED发光字制作</a></li>
+                        <li><a href="#">灯箱广告牌</a></li>
+                        <li><a href="#">大型楼顶广告</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：service@signexpert.com</li>
+                        <li>地址：XX市XX区创意产业园A栋</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 招牌专家. 保留所有权利.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+                  </html>
