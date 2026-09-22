@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>剑网三职业-门派特性解析与实战搭配指南</title>
+    <meta name="description" content="剑网三职业指南，包含全门派属性成长、技能机制详解、PVP与PVE实战流派搭配、装备选择及新手入门推荐。">
+    <meta name="keywords" content="剑网三职业,剑网三门派,剑网三PVP,PVE搭配,七秀,万花,纯阳,天策">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary: #4a90e2;
+            --secondary: #2c3e50;
+            --accent: #e67e22;
+            --bg-light: #f8f9fa;
+            --text-main: #333;
+            --text-light: #666;
+            --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --border-radius: 8px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fff;
+            padding-top: var(--header-height);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.8);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* Class Grid */
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .class-card {
+            background: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .class-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        .class-header {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            position: relative;
+        }
+
+        .class-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .class-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .class-role {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .class-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .class-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        /* Guide Layout */
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .article-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        .article-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            border-left: 4px solid var(--primary);
+            padding-left: 12px;
+        }
+
+        .article-card p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .article-card ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .article-card li {
+            margin-bottom: 8px;
+        }
+
+        .sidebar-widget {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-widget h4 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .sidebar-list li {
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 10px;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--primary);
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table th {
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--secondary);
+            width: 20%;
+        }
+
+        .comparison-table td {
+            color: var(--text-light);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: #fff;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #aaa;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th, .comparison-table td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">剑网<span>三</span>职业百科</div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">门派概览</a></li>
+                <li><a href="#">PVE攻略</a></li>
+                <li><a href="#">PVP竞技</a></li>
+                <li><a href="#">装备搭配</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>探索江湖门派，选择你的本命</h1>
+    <p>剑网三共有十大门派，各具特色。本站提供详尽的职业属性分析、技能机制解析以及实战流派搭配指南，助你快速上手。</p>
+    <div class="hero-tags">
+        <span class="tag">输出 (DPS)</span>
+        <span class="tag">治疗 (Healer)</span>
+        <span class="tag">坦克 (Tank)</span>
+        <span class="tag">新手推荐</span>
+    </div>
+</section>
+
+<main>
+    <section>
+        <div class="section-title">
+            <h2>门派全览</h2>
+            <p>按职业定位快速查找详细信息</p>
+        </div>
+        <div class="class-grid">
+            <!-- 1. 唐门 -->
+            <article class="class-card">
+                <div class="class-header" style="background-color: #5d6d7e;">唐门</div>
+                <div class="class-body">
+                    <div class="class-role">远程 / 输出</div>
+                    <p class="class-desc">唐门暗器世家，擅长远距离攻击与陷阱控制。拥有极高的爆发伤害与风筝能力，是团队中不可或缺的物理输出核心。</p>
+                    <div class="class-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">爆发</span>
+                            <span class="stat-label">高</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">生存</span>
+                            <span class="stat-label">中</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">操作</span>
+                            <span class="stat-label">高</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2. 万花 -->
+            <article class="class-card">
+                <div class="class-header" style="background-color: #27ae60;">万花</div>
+                <div class="class-body">
+                    <div class="class-role">远程 / 治疗</div>
+                    <p class="class-desc">万花谷主修医术与诗画，拥有全门派最全面的辅助技能。既能提供强大的群体治疗，也能输出高额伤害，可切换治疗/输出形态。</p>
+                    <div class="class-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">治疗</span>
+                            <span class="stat-label">极强</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">输出</span>
+                            <span class="stat-label">高</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">灵活</span>
+                            <span class="stat-label">高</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3. 纯阳 -->
+            <article class="class-card">
+                <div class="class-header" style="background-color: #8e44ad;">纯阳</div>
+                <div class="class-body">
+                    <div class="class-role">远程 / 输出</div>
+                    <p class="class-desc">纯阳宫承袭道家武学，以剑术闻名。拥有极强的控制能力与爆发输出，是PVP中的强力竞争者。</p>
+                    <div class="class-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">控制</span>
+                            <span class="stat-label">极强</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">爆发</span>
+                            <span class="stat-label">高</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">身法</span>
+                            <span class="stat-label">飘逸</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4. 七秀 -->
+            <article class="class-card">
+                <div class="class-header" style="background-color: #e74c3c;">七秀</div>
+                <div class="class-body">
+                    <div class="class-role">近战 / 治疗</div>
+                    <p class="class-desc">七秀坊舞动双剑，以舞蹈辅助战斗。拥有极强的单体爆发治疗能力，操作手感华丽，深受女性玩家喜爱。</p>
+                    <div class="class-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">治疗</span>
+                            <span class="stat-label">单体强</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">输出</span>
+                            <span class="stat-label">高</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">颜值</span>
+                            <span class="stat-label">高</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 5. 天策 -->
+            <article class="class-card">
+                <div class="class-header" style="background-color: #d35400;">天策</div>
+                <div class="class-body">
+                    <div class="class-role">近战 / 坦克</div>
+                    <p class="class-desc">天策府以骑射闻名，是团队中的核心坦克。拥有极强的拉怪能力与生存能力，是PVE副本不可或缺的屏障。</p>
+                    <div class="class-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">坦克</span>
+                            <span class="stat-label">稳健</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">机动</span>
+                            <span class="stat-label">高</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">近战</span>
+                            <span class="stat-label">物理</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 6. 少林 -->
+            <article class="class-card">
+                <div class="class-header" style="background-color: #f39c12;">少林</div>
+                <div class="class-body">
+                    <div class="class-role">近战 / 坦克</div>
+                    <p class="class-desc">少林寺武学刚猛有力，拥有全门派最高的气血上限。技能带有反震效果，是近战坦克中的中流砥柱。</p>
+                    <div class="class-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">气血</span>
+                            <span class="stat-label">最高</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">反震</span>
+                            <span class="stat-label">强</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">控制</span>
+                            <span class="stat-label">中</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 7. 藏剑 -->
+            <article class="class-card">
+                <div class="class-header" style="background-color: #34495e;">藏剑</div>
+                <div class="class-body">
+                    <div class="class-role">近战 / 输出</div>
+                    <p class="class-desc">藏剑山庄剑术精妙，兼具远程与近战能力。拥有极强的爆发输出和灵活的位移，是PVP中的热门职业。</p>
+                    <div class="class-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">爆发</span>
+                            <span class="stat-label">极高</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">机动</span>
+                            <span class="stat-label">极高</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">生存</span>
+                            <span class="stat-label">中</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 8. 五毒 -->
+            <article class="class-card">
+                <div class="class-header" style="background-color: #16a085;">五毒</div>
+                <div class="class-body">
+                    <div class="class-role">远程 / 输出</div>
+                    <p class="class-desc">五毒教擅长蛊毒与暗杀。拥有持续的dot伤害和爆发能力，操作上限极高，适合追求极限输出的玩家。</p>
+                    <div class="class-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">持续伤害</span>
+                            <span class="stat-label">高</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">爆发</span>
+                            <span class="stat-label">高</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">难度</span>
+                            <span class="stat-label">高</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div class="guide-layout">
+        <div class="main-content">
+            <section class="section-title">
+                <h2>职业选择建议</h2>
+            </section>
+            
+            <article class="article-card">
+                <h3>新手入门推荐</h3>
+                <p>对于刚接触《剑网3》的新玩家，选择职业时应考虑操作难度、团队需求以及个人喜好。</p>
+                <ul>
+                    <li><strong>万花：</strong> 操作相对简单，功能性强，是新手治疗的不二之选。</li>
+                    <li><strong>天策：</strong> 坦克职业，操作直观，容易在副本中找到定位。</li>
+                    <li><strong>少林：</strong> 气血厚，容错率高，适合喜欢近战肉搏的玩家。</li>
+                    <li><strong>七秀：</strong> 输出与治疗兼备，外观华丽，适合喜欢高颜值操作的玩家。</li>
+                </ul>
+            </article>
+
+            <article class="article-card">
+                <h3>PVP与PVE侧重</h3>
+                <p>不同职业在不同玩法下的表现差异巨大。</p>
+                <p><strong>竞技场 (PVP)：</strong> 唐门、纯阳、藏剑、五毒在PVP中表现强势，需要极高的走位和技能衔接意识。</p>
+                <p><strong>副本 (PVE)：</strong> 天策、少林作为坦克是刚需；万花、七秀是主流治疗；输出职业选择较多，可根据喜好选择。</p>
+            </article>
+        </div>
+
+        <aside>
+            <div class="sidebar-widget">
+                <h4>热门流派</h4>
+                <ul class="sidebar-list">
+                    <li><a href="#">万花：花间输出流</a></li>
+                    <li><a href="#">七秀：冰心输出流</a></li>
+                    <li><a href="#">天策：铁牢坦流</a></li>
+                    <li><a href="#">少林：明尊流</a></li>
+                    <li><a href="#">唐门：惊羽爆发流</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h4>属性优先级</h4>
+                <ul class="sidebar-list">
+                    <li><a href="#">输出：会心 > 命中 > 敏捷</a></li>
+                    <li><a href="#">治疗：治疗强度 > 气血 > 精通</a></li>
+                    <li><a href="#">坦克：格挡 > 气血上限 > 外防</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <section class="comparison-section">
+        <div class="section-title">
+            <h2>职业属性对比表</h2>
+        </div>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>门派</th>
+                    <th>定位</th>
+                    <th>攻击方式</th>
+                    <th>特色</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>天策</strong></td>
+                    <td>坦克 (T)</td>
+                    <td>近战/骑射</td>
+                    <td>冲锋、嘲讽、爆发</td>
+                </tr>
+                <tr>
+                    <td><strong>少林</strong></td>
+                    <td>坦克 (T)</td>
+                    <td>近战</td>
+                    <td>高气血、反震</td>
+                </tr>
+                <tr>
+                    <td><strong>万花</strong></td>
+                    <td>治疗 (H)</td>
+                    <td>远程</td>
+                    <td>治疗/输出双修</td>
+                </tr>
+                <tr>
+                    <td><strong>七秀</strong></td>
+                    <td>治疗 (H)</td>
+                    <td>近战</td>
+                    <td>高爆发单体治疗</td>
+                </tr>
+                <tr>
+                    <td><strong>纯阳</strong></td>
+                    <td>输出 (DPS)</td>
+                    <td>远程/近战</td>
+                    <td>强力控制、爆发</td>
+                </tr>
+                <tr>
+                    <td><strong>藏剑</strong></td>
+                    <td>输出 (DPS)</td>
+                    <td>近战</td>
+                    <td>高机动、多段伤害</td>
+                </tr>
+                <tr>
+                    <td><strong>唐门</strong></td>
+                    <td>输出 (DPS)</td>
+                    <td>远程</td>
+                    <td>暗器、陷阱、爆发</td>
+                </tr>
+                <tr>
+                    <td><strong>五毒</strong></td>
+                    <td>输出 (DPS)</td>
+                    <td>远程</td>
+                    <td>毒伤、暗影步</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>剑网三职业百科</h4>
+            <p style="color: #aaa; font-size: 0.9rem;">致力于为玩家提供最准确、最全面的职业资料与攻略指南。</p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#">官方社区</a></li>
+                <li><a href="#">官方论坛</a></li>
+                <li><a href="#">职业平衡调整</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>相关资源</h4>
+            <ul>
+                <li><a href="#">官方下载</a></li>
+                <li><a href="#">大脚/盒插件</a></li>
+                <li><a href="#">拍卖行助手</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2023 剑网三职业指南. All Rights Reserved. 本站内容仅供玩家参考，非官方网站。
+    </div>
+</footer>
+
+</body>
+  </html>
